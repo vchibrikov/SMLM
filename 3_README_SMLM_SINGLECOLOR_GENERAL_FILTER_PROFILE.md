@@ -58,8 +58,8 @@ input_file_path = '/Users/input/file/path.csv'
 lasso_thickness = 0.2
  ```
 
-### LassoAnalyzer Class Definition
-Constructor (__init__): Initializes the LassoAnalyzer object, sets attributes like canvas, coordinates (x, y), lasso thickness, and number of segments.
+### LassoAnalyzer class definition
+Constructor (__init__) initializes the LassoAnalyzer object, sets attributes like canvas, coordinates (x, y), lasso thickness, and number of segments.
  ```
 class LassoAnalyzer:
     def __init__(self, ax, x, y, thickness=lasso_thickness, num_segments=None):
@@ -75,8 +75,8 @@ class LassoAnalyzer:
         self.num_segments = num_segments
  ```
 
-### Handling Lasso Selection (onselect)
-onselect(): Triggered when the user completes a lasso selection. It records the lasso coordinates, calculates its length, interpolates the line if segments are specified, and counts points near the line.
+### Handling lasso selection (onselect)
+onselect(): triggered when the user completes a lasso selection. It records the lasso coordinates, calculates its length, interpolates the line if segments are specified, and counts points near the line.
  ```
     def onselect(self, verts):
         self.lasso_coords = np.array(verts)
@@ -96,8 +96,8 @@ onselect(): Triggered when the user completes a lasso selection. It records the 
         self.canvas.draw_idle()
  ```
 
-### Interpolating Lasso Segments
-interpolate_lasso_segments(): Splits the lasso line into a specified number of segments by interpolating points.
+### Interpolating Lasso segments
+interpolate_lasso_segments() splits the lasso line into a specified number of segments by interpolating points.
  ```
     def interpolate_lasso_segments(self):
         """Interpolate points along the lasso to achieve the desired number of segments."""
@@ -106,8 +106,8 @@ interpolate_lasso_segments(): Splits the lasso line into a specified number of s
         ...
  ```
 
-### Calculating Lasso Length
-calculate_lasso_length(): Calculates the total length of the drawn lasso based on the sum of distances between consecutive points. 
+### Calculating Lasso length
+calculate_lasso_length() calculates the total length of the drawn lasso based on the sum of distances between consecutive points. 
 ```
     def interpolate_lasso_segments(self):
         """Interpolate points along the lasso to achieve the desired number of segments."""
@@ -116,8 +116,8 @@ calculate_lasso_length(): Calculates the total length of the drawn lasso based o
         ...
  ```
 
-### Splitting the Lasso and Counting Points
-split_lasso_and_count_points(): Divides the lasso into segments and counts how many data points fall within a specified thickness around each segment.
+### Splitting the Lasso and counting points
+split_lasso_and_count_points() divides the lasso into segments and counts how many data points fall within a specified thickness around each segment.
 ```
     def split_lasso_and_count_points(self):
         """Split the lasso into segments and calculate the number of points near each segment."""
@@ -126,24 +126,24 @@ split_lasso_and_count_points(): Divides the lasso into segments and counts how m
         ...
  ```
 
-### Checking Point Distance from Lasso
-points_within_thickness(): Determines which points lie within a defined distance (thickness) of the lasso line.
+### Checking point distance from Lasso
+points_within_thickness() determines which points lie within a defined distance (thickness) of the lasso line.
 ```
     def points_within_thickness(self, segment_start, segment_end):
         """Find points within the lasso line's thickness (distance from the line)."""
         ...
  ```
 
-### Plotting Profile
-plot_profile(): Creates a plot showing the relationship between the lasso segment length and the number of points near each segment. Saves the plot if an output path is provided.
+### Plotting profile
+plot_profile() creates a plot showing the relationship between the lasso segment length and the number of points near each segment. Saves the plot if an output path is provided.
 ```
     def plot_profile(self, output_path=None):
         """Plot the profile: length of the lasso segment (x-axis) vs. points per segment (y-axis)."""
         ...
  ```
 
-### Utility Functions
-get_base_name(): Extracts the base name of the file by combining its path and name. set_aspect_ratio(): Sets the aspect ratio for a plot.
+### Utility functions
+get_base_name() extracts the base name of the file by combining its path and name. set_aspect_ratio() sets the aspect ratio for a plot.
  ```
 def get_base_name(input_file_path):
     file_name = os.path.splitext(os.path.basename(input_file_path))[0]
@@ -157,22 +157,22 @@ def set_aspect_ratio(ax, ratio=1):
     ax.set_aspect(ratio)
  ```
 
-### Filtering Points
-filter_points(): Filters points based on the density of neighboring points within a specified radius. Points with fewer than the minimum required neighbors are removed.
+### Filtering points
+filter_points() filters points based on the density of neighboring points within a specified radius. Points with fewer than the minimum required neighbors are removed.
  ```
 def filter_points(x, y, z, radius=filtering_radius, min_neighbors=filtering_min_neighbours):
     """Filter points based on the density of neighboring points."""
     ...
  ```
 
-### Main Plotting Function
-plot_3d_scatter_with_lasso(): This is the main function for loading data, filtering points, and generating a 2D scatter plot where a lasso tool allows for manual selection of regions. It also generates a profile plot for the selected region.
+### Main plotting function
+plot_3d_scatter_with_lasso() this is the main function for loading data, filtering points, and generating a 2D scatter plot where a lasso tool allows for manual selection of regions. It also generates a profile plot for the selected region.
 ```
 def plot_3d_scatter_with_lasso(input_file_path, output_directory, sphere_radius=0.05, filter_radius=0.1, min_neighbors=5, lasso_thickness=lasso_thickness):
     ...
  ```
 
-### Running the Script
+### Running the script
 This block calls the plot_3d_scatter_with_lasso() function, specifying input file paths, output directory, and parameters like sphere_radius, filter_radius, and lasso_thickness. This executes the entire process of loading, filtering, plotting, and analyzing the data.
 ```
 output_directory = '/Users/path/to/output/directory'
@@ -181,8 +181,3 @@ plot_3d_scatter_with_lasso(input_file_path, output_directory, sphere_radius=0.00
 
 ## License
 This project is licensed under the MIT License. See LICENSE file.
-
-
-
-
-
