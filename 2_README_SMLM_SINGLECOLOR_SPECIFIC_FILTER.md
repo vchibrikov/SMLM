@@ -30,10 +30,10 @@ This Python script processes a .csv file containing 3D coordinate data and gener
 - filtering_radius: radius within which neighbors are counted for filtering points.
 - filtering_min_neighbours: minimum number of neighbors a point must have to be included in the plot.
 - sphere_radius: radius of the plotted points in micrometers (adjusted for scaling).
-- xy_aspect_ratio = 1
-- yz_aspect_ratio = 0.5
-- xz_aspect_ratio = 0.5
-- xyz_aspect_ratio = [1, 1, 0.01]
+- xy_aspect_ratio; aspect ratio for xy view.
+- xz_aspect_ratio: aspect ratio for xz view.
+- yz_aspect_ratio: aspect ratio for yz view.
+- xyz_aspect_ratio: aspect ratio for 3D plot (box aspect).
 - dpi: resolution for saved images.
 - fontsize_axis_title: font size for axis titles.
 
@@ -51,7 +51,6 @@ from matplotlib.colors import Normalize
 from scipy.spatial import KDTree
 import os
 
-# Aspect ratios and figure settings
 xy_aspect_ratio = 1
 yz_aspect_ratio = 0.5
 xz_aspect_ratio = 0.5
