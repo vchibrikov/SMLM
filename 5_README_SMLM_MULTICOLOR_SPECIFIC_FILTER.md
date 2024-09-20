@@ -136,9 +136,9 @@ def filter_points(x, y, z, radius, min_neighbors):
 ```
 
 ### Main plotting function - File 1 processing
-- Data Loading: Loads data from file1.csv in chunks and concatenates them into a single dataframe.
-- Normalization: Scales the data from millimeters to micrometers.
-- Filtering: Filters points based on density (using filter_points), then masks data within a defined region of interest (ROI).
+- Data Loading: loads data file in chunks and concatenates them into a single dataframe.
+- Normalization: scales the data from micrometers to nanometers.
+- Filtering: filters points based on density (using filter_points), then masks data within a defined region of interest (ROI).
  ```
 def plot_3d_scatter_from_csv(file1_path, file2_path=None, output_directory=None, ...):
     print(f"Processing file 1: {file1_path}")
@@ -185,7 +185,7 @@ def plot_3d_scatter_from_csv(file1_path, file2_path=None, output_directory=None,
 ```
 
 ### Plotting - 2D and 3D scatterplots
-2D and 3D scatterplots: The function creates multiple scatter plots (2D and 3D) of the points, using color to represent the Z-coordinate.
+2D and 3D scatterplots: the function creates multiple scatter plots (2D and 3D) of the points, using color to represent the z-coordinate.
 ```
     fig = plt.figure(figsize=(35, 20))
     ax1 = fig.add_subplot(spec[0, 0])
@@ -202,7 +202,7 @@ File saving: each plot is saved as an image file (.png) in the output directory.
 ```
 
 ### Final call
-Function Invocation: The script concludes by calling the plot_3d_scatter_from_csv function with specified parameters, paths, and output directories.
+Function invocation: the script concludes by calling the plot_3d_scatter_from_csv function with specified parameters, paths, and output directories.
 ```
 output_directory = '/Users/path/to/output/directory'
 plot_3d_scatter_from_csv(file1_path, file2_path=file2_path, output_directory=output_directory, ...)
