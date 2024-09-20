@@ -21,7 +21,7 @@ The following Python packages are required:
 ## Parameters
 - input_file_path: path to the .csv file containing 3D point cloud data.
 - output_directory: directory where the generated plots will be saved.
-- sphere_radius: dadius of the points in the scatter plot (default is 0.05).
+- sphere_radius: radius of the points in the scatter plot (default is 0.05).
 - filtering_radius: radius used for filtering points based on their density.
 - filtering_min_neighbours: minimum number of neighbors required for a point to be kept after filtering.
 - xy_aspect_ratio: aspect ratio for XY view.
