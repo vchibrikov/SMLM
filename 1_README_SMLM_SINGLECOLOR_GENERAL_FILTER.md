@@ -24,9 +24,9 @@ The following Python packages are required:
 - sphere_radius: radius of the points in the scatter plot (default is 0.05).
 - filtering_radius: radius used for filtering points based on their density.
 - filtering_min_neighbours: minimum number of neighbors required for a point to be kept after filtering.
-- xy_aspect_ratio: aspect ratio for XY view.
-- xz_aspect_ratio: aspect ratio for XZ view.
-- yz_aspect_ratio: aspect ratio for YZ view.
+- xy_aspect_ratio: aspect ratio for xy view.
+- xz_aspect_ratio: aspect ratio for xz view.
+- yz_aspect_ratio: aspect ratio for yz view.
 - xyz_aspect_ratio: aspect ratio for 3D plot (box aspect).
 
 ## Description
