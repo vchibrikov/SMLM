@@ -148,7 +148,7 @@ def plot_3d_scatter_from_csv(file1_path, file2_path=None, output_directory=None,
 ```
 
 ### Data preprocessing and filtering
-- Extracts x, y, z coordinates from columns in the DataFrame and scales them.
+- Extracts x, y, z coordinates from columns in the dataframe and scales them.
 - Filters points using the filter_points function based on the radius and neighbor threshold.
 ```
     x1 = df1.iloc[:, 2].values / 1000
